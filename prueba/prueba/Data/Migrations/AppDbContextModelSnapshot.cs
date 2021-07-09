@@ -91,9 +91,7 @@ namespace prueba.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Sexo")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Telefono")
                         .IsRequired()

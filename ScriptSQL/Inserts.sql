@@ -23,6 +23,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SpInsertarAreas`(
 )
 BEGIN
 insert into areas (Descripcion, TrabajadoresId) values (Vdescripcion, 0);
+select * from areas;
 END
 
 */
@@ -34,7 +35,7 @@ END
 
 */
 /*
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SpActualizarArea`(in id int, in Vdescripcion varchar(255))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SpActualizarArea`(in Vid int, in Vdescripcion varchar(255))
 BEGIN
  update areas set Descripcion = Vdescripcion where Id = Vid;
  select * from areas;
@@ -99,3 +100,24 @@ BEGIN
     select * from trabajadores;
 END
 */
+/*
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SpInsertarTrabajadorNormal`(
+  in Vnombres varchar(20), in Vapellidos varchar(20), in Vdireccion varchar(20),
+  in Vtelefono varchar(10), in Vsalario int, in VareasId int, in VfechaIngreso datetime,
+  in Vsexo varchar(15), in VempresasId int
+)
+BEGIN
+  insert into trabajadores(
+  nombres, apellidos, direccion, telefono, salario, areasId, fechaIngreso,
+     sexo, empresasId
+  ) values(
+  Vnombres, Vapellidos, Vdireccion, Vtelefono, Vsalario, VareasId, VfechaIngreso,
+  Vsexo, VempresasId);
+  
+  select * from trabajadores;
+END
+
+*/
+
+select * from empresas
+select * from areas where TrabajadoresId != 0

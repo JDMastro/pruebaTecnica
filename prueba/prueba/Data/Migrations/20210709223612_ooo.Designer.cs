@@ -9,7 +9,7 @@ using prueba.Data;
 namespace prueba.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210709054545_ooo")]
+    [Migration("20210709223612_ooo")]
     partial class ooo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,9 +93,7 @@ namespace prueba.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Sexo")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("varchar(15)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Telefono")
                         .IsRequired()

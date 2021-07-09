@@ -45,7 +45,23 @@ namespace prueba.Services.Implementations
                 parameters : new[] { Vnombres, Vapellidos, Vdireccion, Vtelefono, Vsalario, VareasId, VfechaIngreso, Vsexo, VempresasId }).ToListAsync();
         }
 
-       
+        public async Task<List<Trabajadores>> IngresarTrabajadoresNormalporSp(Trabajadores t)
+        {
+            var Vnombres = new MySqlParameter("@Vnombres", t.Nombres);
+            var Vapellidos = new MySqlParameter("@Vapellidos", t.Apellidos);
+            var Vdireccion = new MySqlParameter("@Vdireccion", t.Direccion);
+            var Vtelefono = new MySqlParameter("@Vtelefono", t.Telefono);
+            var Vsalario = new MySqlParameter("@Vsalario", t.Salario);
+            var VareasId = new MySqlParameter("@VareasId", t.AreasId);
+            var VfechaIngreso = new MySqlParameter("@VfechaIngreso", t.FechaIngreso);
+            var Vsexo = new MySqlParameter("@Vsexo", t.Sexo);
+            var VempresasId = new MySqlParameter("@VempresasId", t.EmpresasId);
+
+
+
+            return await Context.Trabajadores.FromSqlRaw("call test.SpInsertarTrabajadorNormal(@Vnombres, @Vapellidos, @Vdireccion, @Vtelefono, @Vsalario, @VareasId, @VfechaIngreso, @Vsexo, @VempresasId);",
+                parameters: new[] { Vnombres, Vapellidos, Vdireccion, Vtelefono, Vsalario, VareasId, VfechaIngreso, Vsexo, VempresasId }).ToListAsync();
+        }
 
         public async Task<List<Trabajadores>> ObtenerTrabajadoresporSp()
         {

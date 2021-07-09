@@ -1,6 +1,6 @@
 ﻿@model prueba.Models.ViewModels.TrabajadoresViewModels
 @{
-    ViewData["Title"] = "Jefe de Area";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,10 +14,10 @@
     }
     <div class="row">
         <div class="col-sm-6">
-            <h3>Lista de Jefes</h3>
+            <h3>Lista de empleados</h3>
         </div>
         <div class="col-sm-6">
-            <a class="btn btn-outline-primary" asp-action="CreateJefes" asp-controller="Trabajadores">Agregar nuevo jefe</a>
+            <a class="btn btn-outline-primary" asp-action="Create" asp-controller="TrabajadorNormal">Agregar empleado</a>
         </div>
     </div>
 
@@ -42,23 +42,23 @@
                 </thead>
                 <tbody>
                     @foreach (var item in Model.Trabajadores)
-                {
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Nombres</td>
-                        <td>@item.Apellidos</td>
-                        <td>@item.Direccion</td>
-                        <td>@item.Telefono</td>
-                        <td>@item.Salario</td>
-                        <td>@item.AreasId</td>
-                        <td>@item.FechaIngreso</td>
-                        <td>@item.Sexo</td>
-                        <td>@item.EmpresasId</td>
-                        <td>
-                            <a asp-controller="Trabajadores" asp-route-id="@item.Id" asp-action="Edit" class="btn btn-primary">Editar</a>
-                        </td>
-                    </tr>
-                }
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Nombres</td>
+                            <td>@item.Apellidos</td>
+                            <td>@item.Direccion</td>
+                            <td>@item.Telefono</td>
+                            <td>@item.Salario</td>
+                            <td>@item.AreasId</td>
+                            <td>@item.FechaIngreso</td>
+                            <td>@item.Sexo</td>
+                            <td>@item.EmpresasId</td>
+                            <td>
+                                <a asp-controller="TrabajadorNormal" asp-route-id="@item.Id" asp-action="Edit" class="btn btn-primary">Editar</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         }

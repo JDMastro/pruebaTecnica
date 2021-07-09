@@ -1,22 +1,21 @@
 ﻿@model prueba.Models.ViewModels.TrabajadoresViewModels
 @{
-    ViewData["Title"] = "Agregar Jefes de areas";
+    ViewData["Title"] = "Agregar Empleado";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h3>Agregar Nuevo Jefe</h3>
+            <h3>Agregar Nuevo Empleado</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-10">
-            <form method="post" asp-action="CreateJefes" asp-controller="Trabajadores">
+            <form method="post" asp-action="Create" asp-controller="TrabajadorNormal">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
 
@@ -53,7 +52,6 @@
                 <div class="form-group">
                     <label asp-for="Trabajador.AreasId" class="control-label"></label>
                     <select asp-for="Trabajador.AreasId" class="form-control" asp-items="@(new SelectList(Model.Areas,"Id","Descripcion"))">
-                        
                     </select>
                     <span asp-validation-for="Trabajador.Areas" class="text-danger"></span>
                 </div>
@@ -106,5 +104,7 @@
         <partial name="_ValidationScriptsPartial" />
     }
 }
+
+
 
 

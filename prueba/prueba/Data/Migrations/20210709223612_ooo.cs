@@ -59,7 +59,7 @@ namespace prueba.Data.Migrations
                     Salario = table.Column<int>(type: "int", nullable: false),
                     AreasId = table.Column<int>(type: "int", nullable: false),
                     FechaIngreso = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    Sexo = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                    Sexo = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     EmpresasId = table.Column<int>(type: "int", nullable: false)
                 },

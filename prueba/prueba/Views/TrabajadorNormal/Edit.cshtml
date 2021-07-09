@@ -1,25 +1,24 @@
 ﻿@model prueba.Models.ViewModels.TrabajadoresViewModels
 @{
-    ViewData["Title"] = "Agregar Jefes de areas";
+    ViewData["Title"] = "Agregar Empleado";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h3>Agregar Nuevo Jefe</h3>
+            <h3>Agregar Nuevo Empleado</h3>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-10">
-            <form method="post" asp-action="CreateJefes" asp-controller="Trabajadores">
+            <form method="post" asp-action="Edit" asp-controller="TrabajadorNormal">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-
+                <input asp-for="Trabajador.Id" type="hidden" />
                 <div class="form-group">
                     <label asp-for="Trabajador.Nombres" class="control-label"></label>
                     <input asp-for="Trabajador.Nombres" class="form-control" />
@@ -50,44 +49,13 @@
                     <span asp-validation-for="Trabajador.Salario" class="text-danger"></span>
                 </div>
 
-                <div class="form-group">
-                    <label asp-for="Trabajador.AreasId" class="control-label"></label>
-                    <select asp-for="Trabajador.AreasId" class="form-control" asp-items="@(new SelectList(Model.Areas,"Id","Descripcion"))">
-                        
-                    </select>
-                    <span asp-validation-for="Trabajador.Areas" class="text-danger"></span>
-                </div>
 
-                <div class="form-group">
-                    <label asp-for="Trabajador.FechaIngreso" class="control-label"></label>
-                    <input asp-for="Trabajador.FechaIngreso" class="form-control" />
-                    <span asp-validation-for="Trabajador.FechaIngreso" class="text-danger"></span>
-                </div>
 
-                <div class="form-group">
-                    <label asp-for="Trabajador.Sexo" class="control-label"></label>
-                    <select asp-for="Trabajador.Sexo" class="form-control">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
-                    </select>
-                    <span asp-validation-for="Trabajador.Sexo" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Trabajador.EmpresasId" class="control-label"></label>
-                    <select asp-for="Trabajador.EmpresasId" class="form-control">
-                        @foreach (var empresas in Model.Empresas)
-                        {
-                            <option value="@empresas.Id">@empresas.Descripcion</option>
-                        }
-                    </select>
-                    <span asp-validation-for="Trabajador.EmpresasId" class="text-danger"></span>
-                </div>
 
 
 
                 <div class="form-group">
-                    <input type="submit" value="Agregar Area" class="btn btn-primary" />
+                    <input type="submit" value="Actualizar Empleado" class="btn btn-primary" />
                 </div>
 
             </form>
@@ -101,10 +69,9 @@
 </div>
 
 
+
 @section Scripts{
     @{
         <partial name="_ValidationScriptsPartial" />
     }
 }
-
-

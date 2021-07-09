@@ -10,6 +10,7 @@ namespace prueba.Services.Interfaces
     {
         Task<List<Trabajadores>> ObtenerTrabajadoresporSp();
         Task<List<Trabajadores>> IngresarTrabajadoresJefeporSp(Trabajadores t);
+        Task<List<Trabajadores>> IngresarTrabajadoresNormalporSp(Trabajadores t);
 
         Task<List<Trabajadores>> ActualizarTrabajadoresJefeporSp(Trabajadores t);
 
