@@ -1,0 +1,110 @@
+﻿@model prueba.Models.ViewModels.TrabajadoresViewModels
+@{
+    ViewData["Title"] = "Agregar Jefes de areas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Agregar Nueva area</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" asp-action="CreateJefes" asp-controller="Trabajadores">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Nombres" class="control-label"></label>
+                    <input asp-for="Trabajador.Nombres" class="form-control" />
+                    <span asp-validation-for="Trabajador.Nombres" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Apellidos" class="control-label"></label>
+                    <input asp-for="Trabajador.Apellidos" class="form-control" />
+                    <span asp-validation-for="Trabajador.Apellidos" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Direccion" class="control-label"></label>
+                    <input asp-for="Trabajador.Direccion" class="form-control" />
+                    <span asp-validation-for="Trabajador.Direccion" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Telefono" class="control-label"></label>
+                    <input asp-for="Trabajador.Telefono" class="form-control" />
+                    <span asp-validation-for="Trabajador.Telefono" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Salario" class="control-label"></label>
+                    <input asp-for="Trabajador.Salario" class="form-control" />
+                    <span asp-validation-for="Trabajador.Salario" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.AreasId" class="control-label"></label>
+                    <select asp-for="Trabajador.AreasId" class="form-control" asp-items="@(new SelectList(Model.Areas,"Id","Descripcion"))">
+                        
+                    </select>
+                    <span asp-validation-for="Trabajador.Areas" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.FechaIngreso" class="control-label"></label>
+                    <input asp-for="Trabajador.FechaIngreso" class="form-control" />
+                    <span asp-validation-for="Trabajador.FechaIngreso" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.Sexo" class="control-label"></label>
+                    <select asp-for="Trabajador.Sexo" class="form-control">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                    </select>
+                    <span asp-validation-for="Trabajador.Sexo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Trabajador.EmpresasId" class="control-label"></label>
+                    <select asp-for="Trabajador.EmpresasId" class="form-control">
+                        @foreach (var empresas in Model.Empresas)
+                        {
+                            <option value="@empresas.Id">@empresas.Descripcion</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Trabajador.EmpresasId" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="Agregar Area" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+

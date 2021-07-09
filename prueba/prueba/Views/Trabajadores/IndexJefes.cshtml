@@ -1,0 +1,77 @@
+﻿@model prueba.Models.ViewModels.TrabajadoresViewModels
+@{
+    ViewData["Title"] = "Jefe de Area";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @if (TempData["mensaje"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["mensaje"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+        </div>
+    }
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Lista de areas</h3>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-outline-primary" asp-action="CreateJefes" asp-controller="Trabajadores">Agregar nueva area</a>
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Model.Trabajadores.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Nombres</td>
+                        <td>Apellidos</td>
+                        <td>Direccion</td>
+                        <td>Teléfono</td>
+                        <td>Salario</td>
+                        <td>Area</td>
+                        <td>Fecha de ingreso</td>
+                        <td>Sexo</td>
+                        <td>Empresa</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Trabajadores)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombres</td>
+                        <td>@item.Apellidos</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Telefono</td>
+                        <td>@item.Salario</td>
+                        <td>@item.AreasId</td>
+                        <td>@item.FechaIngreso</td>
+                        <td>@item.Sexo</td>
+                        <td>@item.EmpresasId</td>
+                        <td>
+                            <a asp-controller="Trabajadores" asp-route-id="@item.Id" asp-action="Edit" class="btn btn-primary">Editar</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay datos</p>
+        }
+    </div>
+
+
+
+
+
+</div>
+
+

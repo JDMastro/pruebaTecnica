@@ -49,8 +49,6 @@ namespace prueba.Models
         public DateTime FechaIngreso { get; set; }
 
 
-        [Required(ErrorMessage = "Es requerido una direcciòn para el trabajador")]
-        [StringLength(15, MinimumLength = 5, ErrorMessage = "El campo sexo no debe ser menor de 5 carateres o mayor de 15 caracteres")]
         [Display(Name = "Sexo del trabajador")]
         public string Sexo { get; set; }
 

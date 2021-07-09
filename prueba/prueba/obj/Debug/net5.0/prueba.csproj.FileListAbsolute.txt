@@ -410,3 +410,6 @@ C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Areas\Ind
 C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\prueba.csproj.AssemblyReference.cache
 C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Areas\Create.cshtml.g.cs
 C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Areas\Edit.cshtml.g.cs
+C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Trabajadores\IndexJefes.cshtml.g.cs
+C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Trabajadores\CreateJefes.cshtml.g.cs
+C:\Users\jdmlm\source\repos\prueba\prueba\obj\Debug\net5.0\Razor\Views\Trabajadores\Edit.cshtml.g.cs

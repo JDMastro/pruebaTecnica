@@ -8,5 +8,6 @@ namespace prueba.Services.Interfaces
 {
     public interface IEmpresas : IRepository<Empresas>
     {
+        Task<List<Empresas>> ObtenerEmpresasporSp();
     }
 }
