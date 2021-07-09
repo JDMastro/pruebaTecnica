@@ -19,7 +19,7 @@ namespace prueba.Data.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Descripcion = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TrabajadoresId = table.Column<int>(type: "int", nullable: false)
+                    TrabajadoresId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -9,7 +9,7 @@ using prueba.Data;
 namespace prueba.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210709021507_ooo")]
+    [Migration("20210709025849_ooo")]
     partial class ooo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

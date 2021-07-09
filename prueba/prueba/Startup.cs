@@ -6,6 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using prueba.Data;
+using prueba.Services.Implementations;
+using prueba.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,15 @@ namespace prueba
         {
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+
+
+            //Inyectando el contexto de la bd a los repositorios
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IAreas, AreasRepository>();
+            services.AddScoped<IEmpresas, EmpresasRepository>();
+            services.AddScoped<ITrabajos, TrabajadoresRepository>();
+
 
             services.AddControllersWithViews();
         }

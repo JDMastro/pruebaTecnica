@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prueba.Models.CustomValidations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace prueba.Models
         [Phone]
         [StringLength(10, MinimumLength = 6, ErrorMessage = "El campo Teléfono no debe ser menor de 6 carateres o mayor de 10 caracteres")]
         [Display(Name = "Teléfono del trabajador")]
+        [CheckTelefono]
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "Es requerido el salario para el trabajador")]
