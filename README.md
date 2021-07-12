@@ -10,3 +10,4 @@
 Nota : 
 1) este programa fue hecho con visual studio, .net 5.0 y mysql
 2) me falto filtrar los empleados de los jefes y el eliminar
+3) en el appsettings.json en la key ConnectionStrings/DefaultConnection se coloca las credenciales de la bd
